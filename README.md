@@ -4,5 +4,5 @@
 * Felipe Jiménez Ramírez
 * Santiago Pareja Pareja
 
-# Episodio
+# Episodio en el que está basado el juego
 Rick and Morty Episodio 5 Temporada 1 
