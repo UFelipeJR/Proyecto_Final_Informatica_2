@@ -32,7 +32,7 @@ jugable será Rick y tendrá como tarea acabar con los Meeseeks que se interpong
 ### *Juego en el que nos basamos*:
 
 * Hotline Miami
-![Alt text](image.png)
+![Alt text](https://i.imgur.com/vFTqBZM.png)
 [Enlace Video](https://www.youtube.com/watch?v=fGzsLU4slGk)<br>
 Hotline miami es un juego que funciona de la misma vista que seleccionamos, es un juego arcade shooter, con un estilo artistico de pixeles, y mucha sangre, decidimos optar por este juego ya que aparte de ser una aproximación muy bien enfocada tenemos bastantes ideas para implementar con la manera que ponemos el juego a disposición. No obstante tenemos en cuenta de que fiel al juego no será.
 
@@ -42,11 +42,11 @@ Hotline miami es un juego que funciona de la misma vista que seleccionamos, es u
 
 * Pueblo:
 
-![Alt text](image-1.png)
+![Alt text](https://i.imgur.com/2Zsf7pv.png)
 
 * Restaurante:
 
-![Alt text](image-2.png)
+![Alt text](https://i.imgur.com/YuO80uI.png)
  
 
 ## *Movimiento*:
@@ -60,7 +60,7 @@ El tipo de combate que deseamos implementar es de tipo melee, que en pocas es co
 
 ## *Enemigos*:
 
-![Alt text](image-5.png)<br>
+![Alt text](https://i.imgur.com/3tfr5eE.png)<br>
 
 Los enemigos serán los Meeseeks, que como se logra observar son el mismo modelo, pero con algunos cambios, lo cual vuelve más sencillo el proceso de creación de los sprites.
 
