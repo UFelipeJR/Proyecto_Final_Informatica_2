@@ -32,7 +32,7 @@ jugable será Rick y tendrá como tarea acabar con los Meeseeks que se interpong
 ### *Juego en el que nos basamos*:
 
 * Hotline Miami
-![Alt text](https://i.imgur.com/vFTqBZM.png)
+![Alt text](https://i.imgur.com/2aWPpyj.jpg)
 [Enlace Video](https://www.youtube.com/watch?v=fGzsLU4slGk)<br>
 Hotline miami es un juego que funciona de la misma vista que seleccionamos, es un juego arcade shooter, con un estilo artistico de pixeles, y mucha sangre, decidimos optar por este juego ya que aparte de ser una aproximación muy bien enfocada tenemos bastantes ideas para implementar con la manera que ponemos el juego a disposición. No obstante tenemos en cuenta de que fiel al juego no será.
 
