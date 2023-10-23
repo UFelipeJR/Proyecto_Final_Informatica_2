@@ -19,11 +19,55 @@ El episodio trata sobre unas criaturas llamadas Meeseeks, quienes fueron creadas
 
 ## Argumento del videojuego:
 
-El videojuego Intruder funciona a modo de spinoff o what if, en el que los Meeseeks terminan por convertirse en una plaga que se extendería a lo largo del mundo, el episodio transcurre igual hasta los compases finales, pero a diferencia del original, los Meeseeks lograron matar a Jerry, pero se dieron cuenta de que esta acción no era la solución del problema, y en búsqueda de un sentido de su existencia, decidieron tomar la vida de la humanidad.
+El videojuego Intruder funciona a modo de spinoff o what if, en el que los Meeseeks terminan por convertirse en una plaga que se extendería a lo largo del mundo, los Meeseeks lograron matar a Jerry, pero se dieron cuenta de que esta acción no era la solución del problema, y en búsqueda de un sentido de su existencia, decidieron tomar la vida de la humanidad.
 
-Después de la muerte de Jerry, Rick influenciado por Morty decide tomar venganza ante lo sucedido y acabar con la plaga Meeseeks, durante el juego el personaje 
-jugable será Rick y tendrá como tarea acabar con los Meeseeks que se interpongan en su camino.
+## Primera parte del juego:
 
+Cinematica Inicial...
+
+Opción de saltar cinematica si/no
+
+Introducir a rick, fecha distinta al episodio, ponemos a rick en una habitacion y lo ponemos al frente de un intercom y que le hable. Aqui rick dice "jerry eres un idiota" y se pone
+la pantalla en negro para la transicion al menu del juego como tal.
+
+### Pancarta del menu principal...
+    INTRUDER
+    // Diseño principal
+
+    JUGAR
+
+    AJUSTES -> Volumen
+
+    SALIR
+
+    JUGAR -> Accede a la historia del juego
+
+## Desarrollo del juego:
+
+La cinematica introductoria
+
+![Alt text](https://i.imgur.com/FE5xGGH.png)
+
+Primer acto (Clean up), Se muestra la cinematica del restaurante, se hace un timelapse
+entra rick desde un portal y mata a todos los meeseks del cuarto, aqui es donde
+tiene que buscar una llave para desbloquear la puerta de atrás y poder ver el
+congelador donde tenian a jerry, que pues en esta ocasión ya esta muerto.
+
+![](https://i.imgur.com/TOVoW41.png)
+
+Segundo acto (Avenue), el nivel de la calle, para darle una entrada mucho más organica y coherente a la llegada de la casa de los padres de morty y para mostrar el caos generado por la plaga
+
+![](https://i.imgur.com/HvldZUT.png)
+
+![](https://i.imgur.com/EYYnvTD.png)
+
+Tercer acto (Full house), el nivel de la casa, para darle un final rick logra llegar a la casa donde encuentra a beth como rehen de varios meeseks, el nivel más grande y complicado del juego por ahora esta en etapa de definción.
+
+Creditos finales.
+
+## Visualización del HUD
+
+![](https://i.imgur.com/aFexfc4.png)
 
 ## Mécanicas del juego:
 
