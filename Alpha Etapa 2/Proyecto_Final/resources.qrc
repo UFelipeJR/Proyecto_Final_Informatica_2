@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Resources/Icon/intruder_icon.ico</file>
+        <file>Resources/Icon/intruder_icon1.ico</file>
+        <file>Resources/Cursor/cross.png</file>
+        <file>Resources/Sprites/Rick/torso.png</file>
+        <file>Resources/Sprites/Rick/legs.png</file>
+        <file>Resources/Sprites/Rick/weaponTrue.png</file>
+        <file>Resources/Sprites/Mezeek/torsoMezeek.png</file>
+        <file>Resources/Sprites/Mezeek/legsMezeek.png</file>
+        <file>Resources/Sprites/Mezeek/mezeekDead.png</file>
+        <file>Resources/Map/map.png</file>
+        <file>Resources/Map/maskCollision.png</file>
+        <file>Resources/Sprites/Rick/rickDead.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,14 @@
+debug/conevision.o
+debug/entities.o
+debug/main.o
+debug/mezeek.o
+debug/resources.o
+debug/rick.o
+debug/scenery.o
+debug/videogame.o
+debug/qrc_resources.o
+debug/moc_entities.o
+debug/moc_mezeek.o
+debug/moc_rick.o
+debug/moc_scenery.o
+debug/moc_videogame.o
