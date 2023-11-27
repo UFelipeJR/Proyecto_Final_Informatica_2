@@ -26,8 +26,10 @@ public:
     static const QString torsoMezeek;
     static const QString legsMezeek;
     static const QString deadMezeek;
+    static const QString lyingMezeek;
     static const QString map1Path;
     static const QString maskMap1Path;
+    static const QString weaponSprite;
 };
 
 #endif // RESOURCES_H

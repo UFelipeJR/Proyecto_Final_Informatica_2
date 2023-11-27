@@ -41,21 +41,19 @@ static constexpr auto qt_meta_stringdata_CLASSvideogameENDCLASS = QtMocHelpers::
     "videogame",
     "punch",
     "",
-    "emitShake",
     "game",
     "killrick",
-    "shake"
+    "throwWeapon"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSvideogameENDCLASS_t {
-    uint offsetsAndSizes[14];
+    uint offsetsAndSizes[12];
     char stringdata0[10];
     char stringdata1[6];
     char stringdata2[1];
-    char stringdata3[10];
-    char stringdata4[5];
-    char stringdata5[9];
-    char stringdata6[6];
+    char stringdata3[5];
+    char stringdata4[9];
+    char stringdata5[12];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSvideogameENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -64,18 +62,16 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSvideogameENDCLASS_t qt_meta_str
         QT_MOC_LITERAL(0, 9),  // "videogame"
         QT_MOC_LITERAL(10, 5),  // "punch"
         QT_MOC_LITERAL(16, 0),  // ""
-        QT_MOC_LITERAL(17, 9),  // "emitShake"
-        QT_MOC_LITERAL(27, 4),  // "game"
-        QT_MOC_LITERAL(32, 8),  // "killrick"
-        QT_MOC_LITERAL(41, 5)   // "shake"
+        QT_MOC_LITERAL(17, 4),  // "game"
+        QT_MOC_LITERAL(22, 8),  // "killrick"
+        QT_MOC_LITERAL(31, 11)   // "throwWeapon"
     },
     "videogame",
     "punch",
     "",
-    "emitShake",
     "game",
     "killrick",
-    "shake"
+    "throwWeapon"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -87,24 +83,22 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSvideogameENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       5,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       2,       // signalCount
+       1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   44,    2, 0x06,    1 /* Public */,
-       3,    0,   45,    2, 0x06,    2 /* Public */,
+       1,    0,   38,    2, 0x06,    1 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       4,    0,   46,    2, 0x0a,    3 /* Public */,
-       5,    0,   47,    2, 0x0a,    4 /* Public */,
-       6,    0,   48,    2, 0x0a,    5 /* Public */,
+       3,    0,   39,    2, 0x08,    2 /* Private */,
+       4,    0,   40,    2, 0x08,    3 /* Private */,
+       5,    0,   41,    2, 0x08,    4 /* Private */,
 
  // signals: parameters
-    QMetaType::Void,
     QMetaType::Void,
 
  // slots: parameters
@@ -126,13 +120,11 @@ Q_CONSTINIT const QMetaObject videogame::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<videogame, std::true_type>,
         // method 'punch'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'emitShake'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'game'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'killrick'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'shake'
+        // method 'throwWeapon'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -145,10 +137,9 @@ void videogame::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         (void)_t;
         switch (_id) {
         case 0: _t->punch(); break;
-        case 1: _t->emitShake(); break;
-        case 2: _t->game(); break;
-        case 3: _t->killrick(); break;
-        case 4: _t->shake(); break;
+        case 1: _t->game(); break;
+        case 2: _t->killrick(); break;
+        case 3: _t->throwWeapon(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -157,13 +148,6 @@ void videogame::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
             using _t = void (videogame::*)();
             if (_t _q_method = &videogame::punch; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
-                return;
-            }
-        }
-        {
-            using _t = void (videogame::*)();
-            if (_t _q_method = &videogame::emitShake; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
-                *result = 1;
                 return;
             }
         }
@@ -190,13 +174,13 @@ int videogame::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 4)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 5;
+        _id -= 4;
     }
     return _id;
 }
@@ -205,11 +189,5 @@ int videogame::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 void videogame::punch()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
-}
-
-// SIGNAL 1
-void videogame::emitShake()
-{
-    QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }
 QT_WARNING_POP

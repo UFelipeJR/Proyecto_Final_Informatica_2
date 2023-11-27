@@ -18,6 +18,9 @@
 #include <conevision.h>
 #include <QSurfaceFormat>
 #include <QPropertyAnimation>
+#include <QBrush>
+#include <QPen>
+#include <weapon.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class videogame; }
@@ -32,17 +35,21 @@ private:
 
     rick* Rick;
     mezeek* Mezeek;
+    weapon* bat;
     QTimer* timerControllers;
     QTimer* timerRotation;
     QGraphicsView *view;
     QGraphicsScene *scene;
     entities* Entities;
     coneVision* circleVision;
-    QPropertyAnimation *animation;
-
     scenery* map1;
+    QGraphicsTextItem* textReset;
+    QGraphicsTextItem* points;
+    QGraphicsTextItem* combo;
+
     int xCamera;
     int yCamera;
+    int level;
 
     std::map<char, bool> keyStates;
 
@@ -50,26 +57,28 @@ public:
     videogame(QWidget *parent = nullptr);
     ~videogame();
     void setCustomBackgroundColor(QString color);
+    void setCustomBackgroundColor(QColor startColor, QColor endColor);
     void keyPressEvent(QKeyEvent* event);
     void keyReleaseEvent(QKeyEvent* event);
     void mousePressEvent(QMouseEvent *event);
     void straighten();
-    void repairCollision();
     void updateCircleVision();
     void updateMove();
     void rotateRick();
     void moveMezeeks(rick* Rick, mezeek* Mezeek);
     void rotateMezeeks();
     void checkPoint();
+    void viewText();
+    void level1();
 
-public slots:
+private slots:
     void game();
     void killrick();
-    void shake();
+    void throwWeapon();
 
 signals:
     void punch();
-    void emitShake();
+
 
 };
 #endif // VIDEOGAME_H

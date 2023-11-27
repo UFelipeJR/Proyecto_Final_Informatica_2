@@ -6,9 +6,11 @@ release/resources.o
 release/rick.o
 release/scenery.o
 release/videogame.o
+release/weapon.o
 release/qrc_resources.o
 release/moc_entities.o
 release/moc_mezeek.o
 release/moc_rick.o
 release/moc_scenery.o
 release/moc_videogame.o
+release/moc_weapon.o

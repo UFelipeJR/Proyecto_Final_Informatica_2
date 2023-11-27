@@ -16,7 +16,8 @@ SOURCES += \
     resources.cpp \
     rick.cpp \
     scenery.cpp \
-    videogame.cpp
+    videogame.cpp \
+    weapon.cpp
 
 HEADERS += \
     conevision.h \
@@ -25,7 +26,8 @@ HEADERS += \
     resources.h \
     rick.h \
     scenery.h \
-    videogame.h
+    videogame.h \
+    weapon.h
 
 FORMS += \
     videogame.ui

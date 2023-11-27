@@ -12,5 +12,9 @@
         <file>Resources/Map/map.png</file>
         <file>Resources/Map/maskCollision.png</file>
         <file>Resources/Sprites/Rick/rickDead.png</file>
+        <file>Resources/Map/level1.png</file>
+        <file>Resources/Map/level1mask.png</file>
+        <file>Resources/Weapon/weapon.png</file>
+        <file>Resources/Sprites/Mezeek/lyingMezeek.png</file>
     </qresource>
 </RCC>

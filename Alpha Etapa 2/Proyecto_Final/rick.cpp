@@ -47,12 +47,17 @@ rick::~rick()
     delete dead;
 }
 
+
 bool rick::detectCollision()
 {
+    mezeek* mezeekItem;
     CollidingItems = collidingItems();
-    for(int i = 0; i< CollidingItems.size(); i++){
+    for(int i = 0; i < CollidingItems.size(); i++){
         if(typeid(*CollidingItems[i]) == typeid(mezeek)){
-            return true;
+            mezeekItem = dynamic_cast<mezeek*>(CollidingItems[i]);
+            if (mezeekItem && mezeekItem->getAlive()) {
+                return true;
+            }
         }
     }
     return false;

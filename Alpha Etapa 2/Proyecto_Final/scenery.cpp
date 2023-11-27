@@ -19,8 +19,6 @@ scenery::scenery(QString pathScenery, QString maskScenery)
     *maskScene = maskScene->scaled(maskScene->width()*scale,maskScene->height()*scale);
     setPixmap(*Scene);
     collisions->setPixmap(*maskScene);
-
-
 }
 
 scenery::~scenery()
@@ -30,72 +28,56 @@ scenery::~scenery()
 
 }
 
-
-bool scenery::detectCollision(rick *Rick)
+bool scenery::detectCollision(rick *Rick, int x, int y)
 {
     QRectF rect = Rick->boundingRect();
     QPointF pos = Rick->pos();
     QGraphicsRectItem rectItem(rect);
-    rect.translate(pos);
+
+    pos.setX(pos.x() + x);
+    pos.setY(pos.y() + y);
     rectItem.setPos(pos);
 
-    if(rectItem.collidesWithItem(collisions)){
+    if (rectItem.collidesWithItem(collisions)) {
         return true;
-    }
-    else{
+    } else {
         return false;
     }
 }
 
-
-int scenery::direction(rick *Rick)
+bool scenery::detectCollision(mezeek *Mezeek, int x, int y)
 {
-    QRectF rectRick = Rick->boundingRect();
-    QPointF posRick = Rick->pos();
-    QGraphicsRectItem rectItemRick(rectRick);
+    QRectF rect = Mezeek->boundingRect();
+    QPointF pos = Mezeek->pos();
+    QGraphicsRectItem rectItem(rect);
 
-    QPointF centerRick;
-    QPointF centerCollisions;
+    pos.setX(pos.x() + x);
+    pos.setY(pos.y() + y);
+    rectItem.setPos(pos);
 
-    qreal dx;
-    qreal dy;
-    rectItemRick.setPos(posRick);
-
-    if (rectItemRick.collidesWithItem(collisions)) {
-        centerRick = posRick + QPointF(rectRick.width() / 2, rectRick.height() / 2);
-        centerCollisions = collisions->pos() + QPointF(collisions->boundingRect().width() / 2, collisions->boundingRect().height() / 2);
-
-        dx = centerCollisions.x() - centerRick.x();
-        dy = centerCollisions.y() - centerRick.y();
-
-        if (qAbs(dx) > qAbs(dy)) {
-            if (dx > 0) {
-                qDebug() << "Colisión detectada a la izquierda de Rick.";
-                    return 1;
-            } else {
-                qDebug() << "Colisión detectada a la derecha de Rick.";
-                    return 2;
-            }
-        } else {
-            if (dy > 0) {
-                qDebug() << "Colisión detectada arriba de Rick.";
-                    return 3;
-            } else {
-                qDebug() << "Colisión detectada abajo de Rick.";
-                    return 4;
-            }
-        }
-
-        return -1;
+    if (rectItem.collidesWithItem(collisions)) {
+        return true;
+    } else {
+        return false;
     }
 }
 
+bool scenery::detectCollision(weapon *Weapon, int x, int y)
+{
+    QRectF rect = Weapon->boundingRect();
+    QPointF pos = Weapon->pos();
+    QGraphicsRectItem rectItem(rect);
 
+    pos.setX(pos.x() + x);
+    pos.setY(pos.y() + y);
+    rectItem.setPos(pos);
 
-
-
-
-
+    if (rectItem.collidesWithItem(collisions)) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 
 

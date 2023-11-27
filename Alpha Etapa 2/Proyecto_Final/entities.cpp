@@ -86,10 +86,6 @@ bool entities::possibilityPunch()
 
     float number = static_cast<float>(std::rand()) / RAND_MAX;
 
-
-    qDebug() << "Number 1:" << randomFloat;
-    qDebug() << "Number 2:" << number;
-
     if (number > randomFloat){
         return false;
     } else {

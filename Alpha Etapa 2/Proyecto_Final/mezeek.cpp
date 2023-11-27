@@ -5,8 +5,9 @@ mezeek::mezeek()
     torso = new QPixmap();
     legs = new QPixmap();
     dead = new QPixmap();
-    timer = new QTimer();
+    lyingSprite = new QPixmap();
 
+    timer = new QTimer();
     physicalTimer = new QTimer();
 
     movementActive = false;
@@ -14,6 +15,7 @@ mezeek::mezeek()
     confirmation = false;
     acelerationActive = false;
     activePunch = false;
+    lying = false;
 
     legsWidth = 33;
     legsLength = 32;
@@ -36,6 +38,7 @@ mezeek::mezeek()
     timer->start(60);
     physicalTimer->start(100*T);
     dead->load(resources::deadMezeek);
+    lyingSprite->load(resources::lyingMezeek);
     connect(timer, SIGNAL(timeout()), this, SLOT(animation()));
     connect(timer, SIGNAL(timeout()), this, SLOT(attack()));
     connect(physicalTimer, SIGNAL(timeout()), this, SLOT(calcAcelerationX()));
@@ -119,7 +122,11 @@ void mezeek::animation()
     splitSprite();
     updateSprite();
 
-    if(alive && movementActive){
+
+    if(lying){
+        setPixmap(lyingSprite->scaled(lyingSprite->width() * scale, lyingSprite->height() * scale));
+    }
+    else if(alive && movementActive){
         mergeSprites();
     }
     else if(!movementActive && alive){
@@ -149,6 +156,7 @@ void mezeek::attack()
         emit killRick();
     }
 }
+
 
 bool mezeek::getConfirmation() const
 {
@@ -187,4 +195,14 @@ bool mezeek::getAcelerationActive() const
 void mezeek::setAcelerationActive(bool newAcelerationActive)
 {
     acelerationActive = newAcelerationActive;
+}
+
+bool mezeek::getLying() const
+{
+    return lying;
+}
+
+void mezeek::setLying(bool newLying)
+{
+    lying = newLying;
 }

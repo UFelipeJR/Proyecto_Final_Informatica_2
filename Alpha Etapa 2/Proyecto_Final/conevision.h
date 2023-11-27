@@ -1,7 +1,7 @@
 #ifndef CONEVISION_H
 #define CONEVISION_H
 
-#include <QGraphicsEllipseItem>
+#include <QGraphicsRectItem>
 #include <QBrush>
 #include <QPen>
 #include <rick.h>
