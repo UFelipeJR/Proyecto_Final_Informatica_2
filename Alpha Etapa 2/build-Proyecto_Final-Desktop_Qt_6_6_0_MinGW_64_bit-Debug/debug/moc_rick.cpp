@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../Proyecto_Final/rick.h"
+#include "../../../Beta Etapa 3/Proyecto_Final/rick.h"
 #include <QtCore/qmetatype.h>
 
 #if __has_include(<QtCore/qtmochelpers.h>)
