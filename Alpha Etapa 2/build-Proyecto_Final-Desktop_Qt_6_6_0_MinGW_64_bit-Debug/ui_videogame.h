@@ -12,7 +12,9 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGraphicsView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -22,6 +24,8 @@ class Ui_videogame
 public:
     QWidget *centralwidget;
     QGraphicsView *main_scene;
+    QPushButton *pushButton;
+    QLabel *label;
 
     void setupUi(QMainWindow *videogame)
     {
@@ -39,6 +43,21 @@ public:
         main_scene->setGeometry(QRect(0, 0, 1366, 800));
         main_scene->setMinimumSize(QSize(1366, 768));
         main_scene->setMaximumSize(QSize(1920, 1080));
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName("pushButton");
+        pushButton->setGeometry(QRect(650, 230, 80, 24));
+        QFont font;
+        font.setFamilies({QString::fromUtf8("Arcadepix")});
+        pushButton->setFont(font);
+        label = new QLabel(centralwidget);
+        label->setObjectName("label");
+        label->setEnabled(true);
+        label->setGeometry(QRect(570, 140, 241, 41));
+        QFont font1;
+        font1.setFamilies({QString::fromUtf8("Arcadepix")});
+        font1.setPointSize(28);
+        label->setFont(font1);
+        label->setCursor(QCursor(Qt::CrossCursor));
         videogame->setCentralWidget(centralwidget);
 
         retranslateUi(videogame);
@@ -49,6 +68,8 @@ public:
     void retranslateUi(QMainWindow *videogame)
     {
         videogame->setWindowTitle(QCoreApplication::translate("videogame", "videogame", nullptr));
+        pushButton->setText(QCoreApplication::translate("videogame", "Play", nullptr));
+        label->setText(QCoreApplication::translate("videogame", "INTRUDER", nullptr));
     } // retranslateUi
 
 };

@@ -9,6 +9,10 @@
 #include <QGuiApplication>
 #include <QScreen>
 #include <Qlist>
+#include <particle.h>
+#include <QGraphicsItem>
+
+
 
 class entities: public QObject
 {

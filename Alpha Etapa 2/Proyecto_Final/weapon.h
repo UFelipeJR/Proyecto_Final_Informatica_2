@@ -3,10 +3,11 @@
 
 #include <QObject>
 #include <QGraphicsPixmapItem>
-#include <rick.h>
 #include <mezeek.h>
 #include <resources.h>
+#include <QSoundEffect>
 
+class mezeek;
 class weapon: public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
@@ -26,7 +27,10 @@ public:
     void setLaunchActive(bool newLaunchActive);
     float getVel() const;
     void setVel(float newVel);
-    bool detectCollision();
+    bool detectCollision(mezeek* specificMezeek);
+
+
+
 
 
 public slots:

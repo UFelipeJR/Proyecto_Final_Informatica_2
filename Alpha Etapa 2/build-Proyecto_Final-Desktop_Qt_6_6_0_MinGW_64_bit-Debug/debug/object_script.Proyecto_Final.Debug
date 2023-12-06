@@ -2,11 +2,14 @@ debug/conevision.o
 debug/entities.o
 debug/main.o
 debug/mezeek.o
+debug/particle.o
 debug/resources.o
 debug/rick.o
 debug/scenery.o
 debug/videogame.o
 debug/weapon.o
+debug/text.o
+debug/headmezeek.o
 debug/qrc_resources.o
 debug/moc_entities.o
 debug/moc_mezeek.o

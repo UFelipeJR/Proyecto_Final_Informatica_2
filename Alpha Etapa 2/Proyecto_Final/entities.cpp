@@ -92,8 +92,6 @@ bool entities::possibilityPunch()
         return true;
     }
 
-
-
 }
 
 

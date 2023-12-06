@@ -5,13 +5,15 @@
 
 
 // Macros
-#define SpriteTorsoLength 264
+#define SpriteTorsoLength 256
 #define SpriteLegsLength 512
 #define SpriteWeaponLength 336
 #define SpriteLegsLengthMezeek 542
 #define SpriteTorsoLengthMezeek 256
-#define pointRotationX 28.5
-#define pointRotationY 41
+#define pointRotationX 40
+#define pointRotationY 40
+//#define pointRotationX 28.5
+//#define pointRotationY 41
 
 class resources
 {
@@ -30,6 +32,12 @@ public:
     static const QString map1Path;
     static const QString maskMap1Path;
     static const QString weaponSprite;
+    static const QString ostLevel1;
+    static const QString ostLevel2;
+    static const QString killSound;
+    static const QString punchSound;
+    static const QString map2Path;
+    static const QString map2PathMask;
 };
 
 #endif // RESOURCES_H

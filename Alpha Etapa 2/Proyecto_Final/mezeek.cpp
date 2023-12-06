@@ -137,6 +137,7 @@ void mezeek::animation()
     }
 }
 
+
 bool mezeek::detectCollision()
 {
     CollidingItems = collidingItems();

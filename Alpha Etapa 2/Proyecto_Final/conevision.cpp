@@ -8,11 +8,11 @@ coneVision::coneVision()
     setBrush(brush);
 }
 
-coneVision::coneVision(qreal x, qreal y, qreal width, qreal height) : QGraphicsRectItem(x, y, width, height) {
+coneVision::coneVision(qreal x, qreal y, qreal width, qreal height, int opacity) : QGraphicsRectItem(x, y, width, height) {
 
     boundingRect.setRect(x, y, width, height);
     QPen pen;
-    QBrush brush(QColor(0, 255, 0, 16));
+    QBrush brush(QColor(0, 255, 0, opacity));
     setBrush(brush);
     pen.setColor(Qt::transparent);
     pen.setWidth(0);
@@ -30,7 +30,6 @@ bool coneVision::checkIntersection(rick *Rick)
     } else {
         return false;
     }
-
 
 }
 

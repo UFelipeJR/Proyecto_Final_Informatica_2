@@ -18,7 +18,7 @@ private:
 
 public:
     scenery();
-    scenery(QString pathScenery, QString maskScenery);
+    scenery(QString pathScenery, QString maskScenery, float scale);
     ~scenery();
 
     bool detectCollision(rick* Rick, int x, int y);

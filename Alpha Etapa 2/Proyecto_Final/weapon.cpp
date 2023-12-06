@@ -22,7 +22,6 @@ weapon::weapon()
     aFriction = 0;
     lossSpeed = 0;
 
-
     *weaponS = weaponS->scaled(weaponS->width()*scale,weaponS->height()*scale);
     setPixmap(*weaponS);
     connect(time,SIGNAL(timeout()),this,SLOT(movement()));
@@ -35,13 +34,11 @@ weapon::~weapon()
 
 void weapon::movement()
 {
-
     if(launchActive && vel >= 0.0){
         aFriction = forceFriction/mass;
         lossSpeed = aFriction*deltaTime;
         vel -= lossSpeed;
     }
-
 
     if(vel <= 0.0){
        launchActive = false;
@@ -50,17 +47,21 @@ void weapon::movement()
 
 }
 
-bool weapon::detectCollision()
+
+
+bool weapon::detectCollision(mezeek *specificMezeek)
 {
     CollidingItems = collidingItems();
-    for(int i = 0; i< CollidingItems.size(); i++){
+    for(int i = 0; i < CollidingItems.size(); i++){
         if(typeid(*CollidingItems[i]) == typeid(mezeek)){
-            return true;
+            mezeek* mezeekItem = dynamic_cast<mezeek*>(CollidingItems[i]);
+            if (mezeekItem == specificMezeek && mezeekItem->getAlive()) {
+                return true;
+            }
         }
     }
     return false;
 }
-
 
 bool weapon::getLaunchActive() const
 {
@@ -81,5 +82,6 @@ void weapon::setVel(float newVel)
 {
     vel = newVel;
 }
+
 
 

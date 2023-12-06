@@ -8,7 +8,11 @@
 #include <QPainter>
 #include <mezeek.h>
 #include <QRectF>
+#include <QSoundEffect>
 
+
+class mezeek;
+class weapon;
 class rick: public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
@@ -30,6 +34,9 @@ private:
     float torsoWidth, torsoLength, legsWidth, legsLength, weaponWidth, weaponLength;
     float rowsTorso, columnsTorso, rowsLegs, columnsLegs, rowsWeapon, columnsWeapon;
 
+    float mass;
+
+    QSoundEffect* punch;
     QList <QGraphicsItem*> CollidingItems;
 
 public:
@@ -43,9 +50,11 @@ public:
     bool getActiveWeapon() const;
     void setActiveWeapon(bool newActiveWeapon);
     bool detectCollision();
-
+    bool detectCollision(mezeek* specificMezeek);
+    float getkineticEnergy(float vel);
     bool getAlive() const;
     void setAlive(bool newAlive);
+    void emitSound(int typeSound);
 
 private slots:
     void animation();

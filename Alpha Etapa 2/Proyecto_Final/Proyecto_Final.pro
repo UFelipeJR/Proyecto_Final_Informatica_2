@@ -1,4 +1,5 @@
-QT       += core gui
+QT       += core gui multimedia
+
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -13,21 +14,27 @@ SOURCES += \
     entities.cpp \
     main.cpp \
     mezeek.cpp \
+    particle.cpp \
     resources.cpp \
     rick.cpp \
     scenery.cpp \
     videogame.cpp \
-    weapon.cpp
+    weapon.cpp \
+    text.cpp \
+    headmezeek.cpp
 
 HEADERS += \
     conevision.h \
     entities.h \
     mezeek.h \
+    particle.h \
     resources.h \
     rick.h \
     scenery.h \
     videogame.h \
-    weapon.h
+    weapon.h \
+    text.h \
+    headmezeek.h
 
 FORMS += \
     videogame.ui
@@ -40,4 +47,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     resources.qrc
 
-DISTFILES +=
+DISTFILES += \
+    Resources/Fondo/wallpaper.jpg

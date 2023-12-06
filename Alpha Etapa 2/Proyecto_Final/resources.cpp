@@ -15,8 +15,13 @@ const QString resources::torsoMezeek = ":/Resources/Sprites/Mezeek/torsoMezeek.p
 const QString resources::legsMezeek = ":/Resources/Sprites/Mezeek/legsMezeek.png";
 const QString resources::deadMezeek = ":/Resources/Sprites/Mezeek/mezeekDead.png";
 const QString resources::lyingMezeek = ":/Resources/Sprites/Mezeek/lyingMezeek.png";
-const QString resources::map1Path = ":/Resources/Map/level1.png";
-const QString resources::maskMap1Path = ":/Resources/Map/level1mask.png";
+const QString resources::map1Path = ":/Resources/Map/cleanhit720.png";
+const QString resources::maskMap1Path = ":/Resources/Map/cleanhit720mask.png";
 const QString resources::weaponSprite = ":/Resources/Weapon/weapon.png";
-
+const QString resources::ostLevel1 = ":/Resources/Songs/level1.wav";
+const QString resources::ostLevel2 = ":/Resources/Songs/level2.wav";
+const QString resources::killSound = ":/Resources/Sound Effects/sndHit3.wav";
+const QString resources::punchSound = ":/Resources/Sound Effects/sndPunch.wav";
+const QString resources::map2Path = ":/Resources/Map/inter.png";
+const QString resources::map2PathMask = ":/Resources/Map/intermask.png";
 

@@ -10,6 +10,9 @@
 #include <rick.h>
 #include <weapon.h>
 
+
+class rick;
+class weapon;
 class mezeek: public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT

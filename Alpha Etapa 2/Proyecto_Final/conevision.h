@@ -5,6 +5,7 @@
 #include <QBrush>
 #include <QPen>
 #include <rick.h>
+
 class coneVision: public QGraphicsRectItem
 {
 
@@ -13,7 +14,7 @@ private:
 
 public:
     coneVision();
-    coneVision(qreal x, qreal y, qreal width, qreal height);
+    coneVision(qreal x, qreal y, qreal width, qreal height, int opacity);
     QRectF getBoundingRect() const;
     void setBoundingRect(const QRectF &newBoundingRect);
     bool checkIntersection(rick* Rick);

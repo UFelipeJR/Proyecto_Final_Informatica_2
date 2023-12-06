@@ -2,11 +2,14 @@ release/conevision.o
 release/entities.o
 release/main.o
 release/mezeek.o
+release/particle.o
 release/resources.o
 release/rick.o
 release/scenery.o
 release/videogame.o
 release/weapon.o
+release/text.o
+release/headmezeek.o
 release/qrc_resources.o
 release/moc_entities.o
 release/moc_mezeek.o

@@ -6,9 +6,8 @@ scenery::scenery()
     maskScene = new QPixmap();
 }
 
-scenery::scenery(QString pathScenery, QString maskScenery)
+scenery::scenery(QString pathScenery, QString maskScenery, float scale)
 {
-    const float scale = 2.5;
     Scene = new QPixmap();
     maskScene = new QPixmap();
     collisions = new QGraphicsPixmapItem;
@@ -62,6 +61,7 @@ bool scenery::detectCollision(mezeek *Mezeek, int x, int y)
     }
 }
 
+
 bool scenery::detectCollision(weapon *Weapon, int x, int y)
 {
     QRectF rect = Weapon->boundingRect();
@@ -78,6 +78,7 @@ bool scenery::detectCollision(weapon *Weapon, int x, int y)
         return false;
     }
 }
+
 
 
 

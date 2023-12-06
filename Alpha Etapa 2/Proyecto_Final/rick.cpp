@@ -18,8 +18,8 @@ rick::rick()
     legsWidth = 33;
     legsLength = 32;
 
-    torsoWidth = 24;
-    torsoLength = 33;
+    torsoWidth = 33;
+    torsoLength = 32;
 
     rowsTorso = 0;
     columnsTorso = 0;
@@ -30,7 +30,11 @@ rick::rick()
     rowsWeapon = 0;
     columnsWeapon = 0;
 
+    mass = 70;
+
     timer->start(60);
+
+    punch = new QSoundEffect(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(animation()));
     connect(punchTimer, SIGNAL(timeout()),this,SLOT(stopPunch()));
     dead->load(resources::deadRick);
@@ -45,22 +49,41 @@ rick::~rick()
     delete weaponTorso;
     delete punchTimer;
     delete dead;
+    delete punch;
 }
 
 
 bool rick::detectCollision()
 {
-    mezeek* mezeekItem;
     CollidingItems = collidingItems();
     for(int i = 0; i < CollidingItems.size(); i++){
         if(typeid(*CollidingItems[i]) == typeid(mezeek)){
-            mezeekItem = dynamic_cast<mezeek*>(CollidingItems[i]);
-            if (mezeekItem && mezeekItem->getAlive()) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+bool rick::detectCollision(mezeek* specificMezeek)
+{
+    CollidingItems = collidingItems();
+    for(int i = 0; i < CollidingItems.size(); i++){
+        if(typeid(*CollidingItems[i]) == typeid(mezeek)){
+            mezeek* mezeekItem = dynamic_cast<mezeek*>(CollidingItems[i]);
+            if (mezeekItem && mezeekItem == specificMezeek && mezeekItem->getAlive()) {
                 return true;
             }
         }
     }
     return false;
+}
+
+
+
+float rick::getkineticEnergy(float vel)
+{
+    return 0.5*(mass*pow(vel,2));
 }
 
 
@@ -72,15 +95,17 @@ void rick::updateSprite()
         rowsWeapon += weaponLength;
     }
 
+
+    if(rowsWeapon >= SpriteWeaponLength || !activeWeapon){
+        rowsWeapon = 0;
+    }
     if(rowsTorso >= SpriteTorsoLength || !movementActive){
         rowsTorso = 0;
     }
     if(rowsLegs >= SpriteLegsLength){
         rowsLegs = 0;
     }
-    if(rowsWeapon >= SpriteWeaponLength || !activeWeapon){
-        rowsWeapon = 0;
-    }
+
 }
 
 
@@ -135,14 +160,18 @@ void rick::animation()
 
 void rick::punchRick()
 {
-    punchTimer->start(450);
-    activeWeapon = true;
-    qDebug() << "Golpe";
-
+    if (!punchTimer->isActive()){
+        //punch->play();
+        punchTimer->start(450);
+        activeWeapon = true;
+        qDebug() << "Golpe";
+    }
 }
+
 
 void rick::stopPunch()
 {
+    //punch->stop();
     punchTimer->stop();
     activeWeapon = false;
     movementActive = false;
@@ -180,5 +209,19 @@ void rick::setAlive(bool newAlive)
 {
     alive = newAlive;
 }
+
+void rick::emitSound(int typeSound)
+{
+
+    if (typeSound == 1) {
+        punch->setSource(QUrl::fromLocalFile(resources::punchSound));
+    } else if (typeSound == 2) {
+        punch->setSource(QUrl::fromLocalFile(resources::killSound));
+    }
+
+    punch->play();
+
+}
+
 
 
