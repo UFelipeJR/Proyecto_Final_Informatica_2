@@ -1,76 +1,140 @@
 # Modelamiento 
 
+Nuestro modelamiento fue muy abrupto al inicio pues mientras desarrollabamos más el proyecto, notabamos que más cosas en realidad se podrian incluir en otras por asi decirlo, simplemente parte del proceso de desarrollo y descubrimiento del modo de realizar nuestro juego.
+
 ### Clases
 
-* Clase Rick 
-* Clase Mezeek
-* Clase Escenario - Scenary
-* Clase Entidades - Entity
-* Clase Videojuego - Videogame
-* Clase Arma - Weapon
-* Clase Rick 
-* Clase Recursos
-* Clase conoVision
+* Conevision
+* Entities
+* headMeezek
+* Meezek
+* Particle
+* Resources
+* Rick
+* Scenery
+* Text
+* Videogame
+* Weapon
 
+# Modelamiento Final
 
-# Modelamiento Inicial Propenso a Cambios
+### Clase Conevision
+
+Public:
+* Constructores de la Clase
+* Booliano para checkear si rick esta dentro de la zona de vision
+
+### Clase Entities
+
+Private:
+* Puntero Rick
+* Variables QGraphicsView, QScreen <- para la resolucion
+* Posición de la cámara en X, Y
+* Flotante Aleatorio
+
+Public:
+* Metodos para los cálculos de los comportamientos de los meezeks y sus rotaciones respectivas de los sprites
+* Setter, Getter
+
+### Clase headMeezek
+
+-> Clase construida para llevar a cabo las constantes del movimiento de los meezek
+
+### Clase Meezek
+
+Private:
+* Stat-checkeos de los Meezeks (enemigos)
+* Constantes para el Sprite
+* FX
+* Constantes para la física implementada (MRUA)
+
+Public:
+* Getter, Setter y actualizaciones para el sprite y stat-checkers de nuevo
+
+Slots:
+* Animaciones segun la señal
+
+Signal:
+* Rick pasa de vivo a muerto segun esta señal
+
+### Clase Particle
+
+Private:
+* Constantes y variables para la física implementada (Habilidad/Especial)
+
+Public:
+* Constructores, actualizar la posición y el checkeo de colision
+
+### Clase Resources
+
+Public:
+* Todas las rutas de los recursos utilizados para el juego (Sprites, Imagenes, Videos, etc...)
 
 ### Clase Rick
 
+Public:
+* Metodos para actualizar el sprite y Stat-checkeaer a nuestro protagonista
+
+Slots:
+* Animación de golpe
+
+### Clase Scenery
+
 Private:
-
-    *Estados: Variables bool para indicar los estados del movimiento.
-    *Variable para el manejo de sprites, como QPixmap y QTimer.
-    *items de colisión
-    *Sonidos
-
-Public
-    *Constructor
-    *Destructor
-    *Métodos de actualización y recorte de sprite
-    *Métodos getter y setter
-
-Private slots:
-    *animacion
-    *slots de ataque
-
-### Clase Mezeek
-Private:
-
-    *Estados: Variables booleanas para indicar los estados del movimiento.
-    *Manejo de sprites: Variables para el manejo de sprites, como QPixmap y QTimer.
-    Items de colisión: Elementos relacionados con la detección de colisiones.
-    Sonidos: Elementos relacionados con la reproducción de sonidos.
+* Pixmap, GraphicsScene  <- para nuestro mapa o escenario de juego
 
 Public:
+* Constructor de la clase y las máscaras de colisión
 
-    *Constructor: Método para inicializar objetos de la clase.
-    *Destructor: Método para liberar recursos y memoria cuando un objeto de la clase se destruye.
-    *Métodos de actualización y recorte de sprite: Funciones para actualizar y recortar el sprite que se muestra en la interfaz gráfica.
-    *Métodos getter y setter: Funciones públicas para acceder y modificar propiedades privadas de la clase.
+### Clase Texto
 
-Private slots:
+Private:
+* Guarda los items encargados de dibujar texto
+* Guarda la fuente especial usada para nuestro juego
 
-    *Animación: Función de ranura que maneja la animación del objeto.
-    *Slots de ataque: 
+Public:
+* Constructora y un metodo para cambiar texto de manera eficaz
 
+### Clase Weapon
 
-### Clase videogame
-    Private:
+Private:
+* Checkeo de si el arma fue lanzada
+* Constantes para el calculo de la friccion ejercida en el cuerpo
+* Colisión y Sonido
 
-    Contiene instancias de Rick, Mezeek, QTimer, QGraphicsView, QGraphicsScene, entities, coneVision, scenery, y un mapa de estados de teclas.
-    Public:
-
-    Constructor y destructor de la aplicación.
-    Métodos para eventos de teclado y ratón.
-    Métodos para controlar el juego, actualizar la visión de cono, mover los personajes y gestionar rotaciones.
-    Slots:
-
-    game: Función que gestiona la lógica principal del juego.
-    Signals:
-
-    punch: Señal
+Public:
+* Constructora de Clase
+* Getter, Setter y Inicializacion de la vel inicial una vez soltada de las manos de rick
 
 
+### Clase Videojuego
+-> Esta es la clase más vasta y grande de nuestro proyecto
 
-NOTA: EL resto del modelamiento está pendiente por ser publicado en el informe
+Private:
+* Lleva los punteros de todos nuestro personajes puesto en escena (Rick, Meezeks, Arma <- ese no es personaje pero si es algo que ponemos en escena)
+* Lleva toda la información relacionada con la reproducción de audios con respecto a las acciones que se realizan (Golpe->Suena, ArmaLanzada->Suena, etc)
+* Listado de Meezeks para verificar cuantos hay en escena y asi dar por terminado un nivel
+* El escenario donde se juega (Mapas)
+* Habilidad principal de rick
+* Las dimensiones para nuestro sistema de cámara dinamico
+* Contadores para la habilidad de energia cinetica
+* Los estados de las teclas presionadas (Movimiento WASD)
+* Valor del Combo
+
+Public:
+* Instancia del juego entero
+* Lanzar Arma
+* Habilitar el poder
+* Inicializar videojuego
+* Muerte del Rick, Finalizar Juego, Animación del menu principal
+* Cada nivel implementado (LVL1,LVL2,LVL3)
+* Reproducción del video inicial
+* Status
+
+Signals:
+* Cambio de nivel y realizar animación de golpe (Esto es más para que se reproduzca de manera correcta)
+
+
+
+
+
