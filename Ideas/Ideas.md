@@ -25,7 +25,7 @@ El videojuego Intruder funciona a modo de spinoff o what if, en el que los Meese
 
 Cinematica Inicial...
 
-Opción de saltar cinematica si/no
+Opción de saltar cinematica si/no <- DESCARTADA
 
 Introducir a rick, fecha distinta al episodio, ponemos a rick en una habitacion y lo ponemos al frente de un intercom y que le hable. Aqui rick dice "jerry eres un idiota" y se pone
 la pantalla en negro para la transicion al menu del juego como tal.
@@ -36,22 +36,20 @@ la pantalla en negro para la transicion al menu del juego como tal.
 
     JUGAR
 
-    AJUSTES -> Volumen
-
-    SALIR
-
-    JUGAR -> Accede a la historia del juego
-
 ## Desarrollo del juego:
 
 La cinematica introductoria
 
 ![Alt text](https://i.imgur.com/FE5xGGH.png)
 
-Primer acto (Clean up), Se muestra la cinematica del restaurante, se hace un timelapse
+//Primer acto (Clean up), Se muestra la cinematica del restaurante, se hace un timelapse
 entra rick desde un portal y mata a todos los meeseks del cuarto, aqui es donde
 tiene que buscar una llave para desbloquear la puerta de atrás y poder ver el
 congelador donde tenian a jerry, que pues en esta ocasión ya esta muerto.
+
+Para nuestra manera de concatenar los sucesos de la historia fue mejor asociarla con un lapso de tiempo más
+prologando para dar un poco más de suspenso a nuestra historia, de modo que la aventura de rick tomo tanto tiempo
+que al volver a su dimensión original vio como todo se habia lentamente hecho trisas gracias a el accionar de los mezeeks.
 
 ![](https://i.imgur.com/TOVoW41.png)
 
@@ -63,11 +61,11 @@ Segundo acto (Avenue), el nivel de la calle, para darle una entrada mucho más o
 
 Tercer acto (Full house), el nivel de la casa, para darle un final rick logra llegar a la casa donde encuentra a beth como rehen de varios meeseks, el nivel más grande y complicado del juego por ahora esta en etapa de definción.
 
-Creditos finales.
+Creditos finales. <- No incluidos
 
 ## Visualización del HUD
 
-![](https://i.imgur.com/aFexfc4.png)
+![](https://i.imgur.com/aFexfc4.png) <- Cambio 2/4
 
 ## Mécanicas del juego:
 
@@ -100,7 +98,7 @@ El movimiento constara de 8 direcciones, especificamente norte, sur, este, oeste
 Para la cuestión de apuntar, será construido con el cursor, el cual dara la dirección de donde estara apuntando nuestro personaje.
 
 ## *Combate*:
-El tipo de combate que deseamos implementar es de tipo melee, que en pocas es combate mano a mano o dicho de otra manera cuerpo a cuerpo, en ese orden de ideas, los ataques disponibles serían un golpe convencional y el uso de un bate, también se desea incluir una modalidad tipo glory kill, la cuál se basa en un tipo de remate.
+El tipo de combate que deseamos implementar es de tipo melee, que en pocas es combate mano a mano o dicho de otra manera cuerpo a cuerpo, en ese orden de ideas, los ataques disponibles serían un golpe convencional y el uso de un bate, también se desea incluir una modalidad tipo glory kill (Incompleta), la cuál se basa en un tipo de remate.
 
 ## *Enemigos*:
 
@@ -111,8 +109,3 @@ Los enemigos serán los Meeseeks, que como se logra observar son el mismo modelo
 ## *Puntuación*:
 
 Para nuestro juego implementaremos un sistema de puntuación un poco simple pero muy efectivo que se basara en un multiplicador por combo, cada enemigo se supone que da 500 puntos, pero con la mecánica que vamos a implementar por cada enemigo abatido consecutivo dara eso multiplicado por el anterior, es decir si matas 2, terminara 2x500, equivaliendo a mil, para modo del juego este no tendra ningún tipo de limite, salvo que ya no hayan enemigos por matar o el jugador muera en el intento de mantener la racha.
-
-
-## *Música*:
-
-Por definir. 
